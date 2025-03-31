@@ -2,6 +2,7 @@ package net.javaguides.springboot_app;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
-@RestController
+@Controller
 public class WelcomeController 
 {
     @GetMapping("/welcome")
@@ -22,6 +23,12 @@ public class WelcomeController
 	{
 		return String.format("Hello %s!", name);
 	}
+
+    @GetMapping("/homevia")
+    public String homevia()
+    {
+        return "Inteprog_21.html";
+    }
     /*
      * Text SMS Via SpringBoot
      */
